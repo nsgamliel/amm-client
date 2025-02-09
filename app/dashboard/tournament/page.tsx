@@ -1,5 +1,7 @@
 import { Team } from '@/app/lib/definitions';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   const getTeamData = async () => {
     const res = await fetch(`${process.env.MMSCORES_BASE_URL}/teams`);
