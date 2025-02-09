@@ -8,7 +8,7 @@ export default async function Page() {
   };
 
   const data = await getTeamData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
