@@ -38,3 +38,5 @@ next-env.d.ts
 /app/seed
 
 /app/query
+
+/app/lib/placeholder-data.ts

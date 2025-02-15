@@ -16,9 +16,9 @@ const links = [
   {
     name: 'Leaderboard',
     href: '/dashboard/leaderboard',
-    icon: NumberedListIcon,
+    icon: TrophyIcon,
   },
-  { name: 'Tournament', href: '/dashboard/tournament', icon: TrophyIcon },
+  { name: 'Teams', href: '/dashboard/tournament', icon: NumberedListIcon },
 ];
 
 export default function NavLinks() {
@@ -33,9 +33,9 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+              'flex h-[48px] items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-red-100 hover:text-red-700 md:flex-none md:justify-start md:p-2 md:px-3',
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,
+                'bg-red-100 text-red-700': pathname === link.href,
               },
             )}
           >
