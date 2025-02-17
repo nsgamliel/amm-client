@@ -1,3 +1,7 @@
-## AMM-Client
+# AMM-Client
 
-This is the frontend client for the Albanian March Madness app
+Frontend client for the Albanian March Madness app
+
+Written using Next.js with Typescript and TailwindCSS
+
+Hosted at https://amm-client-black.vercel.app/ or https://www.albaniancontestofchampions.us/
