@@ -4,6 +4,8 @@ import { Bracket, Team } from '@/app/lib/definitions';
 import { lusitana } from '@/app/ui/fonts';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   const leaderboard = await getLeaderboard();
   const teams = await getTeamsDict();
