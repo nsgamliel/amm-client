@@ -35,6 +35,7 @@ export const getBrackets = async () => {
 };
 
 export const getTeamsArray = async () => {
+  console.log(`${process.env.MMSCORES_BASE_URL}/teams`);
   const res = await fetch(`${process.env.MMSCORES_BASE_URL}/teams`);
   const data = await res.json();
   return data;
