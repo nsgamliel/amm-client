@@ -37,7 +37,7 @@ export default async function Page() {
         </thead>
         <tbody>
           {data.map((team:Team) => (
-            <React.Fragment>
+            <React.Fragment key={team.id}>
               <tr key={`${team.id}r`} className='border-b hidden md:table-row'>
                 <td className='p-2'>{team.name}</td>
                 <td className='p-2'>{team.seed}</td>
