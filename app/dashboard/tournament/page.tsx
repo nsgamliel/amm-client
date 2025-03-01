@@ -42,13 +42,13 @@ export default async function Page() {
                 <td className='p-2'>{team.name}</td>
                 <td className='p-2'>{team.seed}</td>
                 <td className='p-2'>{team.seed * 15 + team.confirmedpts + team.inprogresspts}</td>
-                <td className={`p-2 ${team.intournament ? 'text-green-500' : 'text-red-500'}`}>{team.intournament ? "In" : "Eliminated"}</td>
+                <td className={`p-2 ${team.intournament ? 'text-green-500' : 'text-red-500'}`}>{team.intournament ? "Active" : "Eliminated"}</td>
               </tr>
               <tr key={`${team.id}s`} className='border-b table-row md:hidden'>
                 <td className='p-2'>{team.short}</td>
                 <td className='p-2'>{team.seed}</td>
                 <td className='p-2'>{team.seed * 15 + team.confirmedpts + team.inprogresspts}</td>
-                <td className={`p-2 ${team.intournament ? 'text-green-500' : 'text-red-500'}`}>{team.intournament ? "In" : "Eliminated"}</td>
+                <td className={`p-2 ${team.intournament ? 'text-green-500' : 'text-red-500'}`}>{team.intournament ? "Active" : "Eliminated"}</td>
               </tr>
             </React.Fragment>
             

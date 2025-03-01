@@ -18,7 +18,7 @@ const links = [
     href: '/dashboard/leaderboard',
     icon: TrophyIcon,
   },
-  { name: 'Teams', href: '/dashboard/tournament', icon: NumberedListIcon },
+  { name: 'Tournament', href: '/dashboard/tournament', icon: NumberedListIcon },
 ];
 
 export default function NavLinks() {

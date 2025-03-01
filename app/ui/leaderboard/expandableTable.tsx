@@ -66,13 +66,13 @@ export default function ExpandableTable({
                             <td className='w-1/2'>{teams[team].name}</td>
                             <td>{teams[team].seed}</td>
                             <td>{teams[team].seed * 15 + teams[team].confirmedpts + teams[team].inprogresspts}</td>
-                            <td>{teams[team].intournament ? "In" : "Eliminated"}</td>
+                            <td>{teams[team].intournament ? "Active" : "Eliminated"}</td>
                           </tr>
                           <tr key={`${idx}s`} className='table-row md:hidden'>
                             <td className='w-1/3 pr-2'>{teams[team].short}</td>
                             <td className='pr-2'>{teams[team].seed}</td>
                             <td className='pr-2'>{teams[team].seed * 15 + teams[team].confirmedpts + teams[team].inprogresspts}</td>
-                            <td>{teams[team].intournament ? "In" : "Eliminated"}</td>
+                            <td>{teams[team].intournament ? "Active" : "Eliminated"}</td>
                           </tr>
                         </React.Fragment>
                         
