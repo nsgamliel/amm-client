@@ -34,7 +34,7 @@ export default function ExpandableTable({
             <td className='font-bold text-lg pb-4 pr-2'>Name</td>
             {/* <td className='font-bold'>User</td> */}
             <td className='font-bold text-lg pb-4 pr-2'>Points</td>
-            <td className='font-bold text-lg pb-4'>Teams</td>
+            <td className='font-bold text-lg pb-4 text-wrap'>Teams Left</td>
           </tr>
         </thead>
         <tbody>
@@ -44,9 +44,9 @@ export default function ExpandableTable({
                 <td className={`py-2 px-1 whitespace-nowrap ${idx<3 ? 'text-green-500 font-bold' : ''}`}>
                   {idx+1} {idx<3 ? '$'.repeat(3-idx) : ''} {bracket.paid ? '' : "*"}
                 </td> 
-                <td className={`py-2 px-1 truncate w-full max-w-0`}>{bracket.name}</td>
+                <td className={`py-2 px-1 truncate w-[45%] max-w-0`}>{bracket.name}</td>
                 {/* <td className='py-2'>{bracket.user}</td> */}
-                <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.points ? bracket.points : "n/a"} <span className='block md:hidden text-red-500 inline-block whitespace-nowrap'>{idx > 0 && bracket.points && leaderboard[0].points ? `(+${leaderboard[0].points - bracket.points})` : ""}</span></td>
+                <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.points ? bracket.points : "n/a"} <span className='block md:hidden text-red-500 inline-block whitespace-nowrap'>{idx > 0 && bracket.points && leaderboard[0].points ? `(-${leaderboard[0].points - bracket.points})` : ""}</span></td>
                 <td className={`py-2 px-1 whitespace-nowrap hidden md:block ${idx > 0 ? 'text-red-500' : ''}`}>{bracket.points && leaderboard[0].points ? leaderboard[0].points - bracket.points : "n/a"}</td>
                 <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.teamsIn ? bracket.teamsIn : "n/a"}</td>
               </tr>
