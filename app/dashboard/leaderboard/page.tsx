@@ -21,6 +21,7 @@ export default async function Page() {
     <>
       <h1 className={`${lusitana.className} text-center md:text-left text-4xl mb-6`}>Leaderboard</h1>
       <ExpandableTable leaderboard={leaderboard} teams={teams} />
+      <p className='my-4 w-full text-center'>* = Commissioner Review</p>
     </>
   );
 }

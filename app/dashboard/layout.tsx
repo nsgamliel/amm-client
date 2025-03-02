@@ -17,7 +17,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             width={400}
             height={400}
             style={{objectFit: "contain", maxHeight: "100%" }}
-            className='w-1/2 h-auto max-h-none md:max-h-full'
+            className='w-1/2 h-auto max-h-none md:max-h-full hidden md:block'
+            priority={true}
           />
           <h1 className={`${lusitana.className} text-lg md:text-3xl text-white w-full text-center font-bold p-4`}>Albanian March Madness Contest of Champions</h1>
           <Image 
@@ -26,12 +27,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             width={400}
             height={400}
             style={{objectFit: "contain", maxHeight: "100%" }}
-            className='w-1/2 h-auto max-h-none md:max-h-full hidden md:block'
+            className='w-1/2 h-auto max-h-none md:max-h-full'
+            priority={true}
           />
         </div>
       </Link>
       <div className="flex h-[90vh] mt-[10vh] flex-col md:flex-row md:overflow-hidden">
-        <div className="w-full bg-white flex-none md:w-64 fixed left-0 right-0 top-[10vh] md:static">
+        <div className="w-full bg-white flex-none md:w-56 fixed left-0 right-0 top-[10vh] md:static">
           <SideNav />
         </div>
         <div className="flex-grow p-4 md:overflow-y-auto md:p-12 mt-[80px] md:mt-0">{children}</div>

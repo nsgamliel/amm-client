@@ -14,7 +14,8 @@ export default function Page() {
             width={400}
             height={400}
             style={{objectFit: "contain", maxHeight: "100%" }}
-            className='w-1/2 h-auto max-h-none md:max-h-full'
+            className='w-1/2 h-auto max-h-none md:max-h-full hidden md:block'
+            priority={true}
           />
           <h1 className={`${lusitana.className} text-2xl md:text-5xl text-white w-full text-center font-bold p-2`}>Albanian March Madness Contest of Champions</h1>
           <Image 
@@ -23,7 +24,8 @@ export default function Page() {
             width={400}
             height={400}
             style={{objectFit: "contain", maxHeight: "100%" }}
-            className='hidden md:block'
+            className='w-1/2 h-auto max-h-none md:max-h-full'
+            priority={true}
           />
         </div>
         <div className="m-4 mt-40 md:mt-52 flex grow flex-col gap-4 md:flex-row">
@@ -37,7 +39,7 @@ export default function Page() {
               href="/dashboard/leaderboard"
               className="flex items-center gap-5 self-start rounded-lg bg-red-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-500 md:text-base"
             >
-              <span>View Tournament</span> <ArrowRightIcon className="w-5 md:w-6" />
+              <span>View Contest</span> <ArrowRightIcon className="w-5 md:w-6" />
             </Link>
           </div>
           <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">

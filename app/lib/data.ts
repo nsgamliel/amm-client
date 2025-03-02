@@ -6,7 +6,7 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 export const getBrackets = async () => {
   try {
     const data = await sql<BracketRaw[]>`
-      SELECT brackets.bracket_id, brackets.name, users.name AS user_name, brackets.team1, brackets.team2, brackets.team3, brackets.team4, brackets.team5, brackets.team6, brackets.team7, brackets.team8
+      SELECT brackets.bracket_id, brackets.name, users.name AS user_name, brackets.team1, brackets.team2, brackets.team3, brackets.team4, brackets.team5, brackets.team6, brackets.team7, brackets.team8, brackets.paid
       FROM brackets
       JOIN users ON brackets.user_id = users.user_id`;
 
@@ -26,6 +26,7 @@ export const getBrackets = async () => {
         bracket.team7,
         bracket.team8
       ],
+      paid: bracket.paid,
     }));
     return brackets;
   } catch (error) {
@@ -62,7 +63,7 @@ export const getLeaderboard = async () => {
       .map((char6:string) => teams[char6].seed * 15 + teams[char6].confirmedpts + teams[char6].inprogresspts)
       .reduce((prev, curr) => prev + curr, 0);
     bracket.teamsIn = bracket.teams
-      .reduce((accum, curr) => teams[curr].intournament ? accum + 1 : accum, 0)
+      .reduce((accum, curr) => teams[curr].intournament ? accum + 1 : accum, 0);
   });
 
   return brackets;

@@ -5,6 +5,7 @@ export type Team = {
   char6: string;
   seed: number;
   intournament: boolean;
+  eliminatedon: string;
   confirmedpts: number;
   inprogresspts: number;
   year: number;
@@ -22,6 +23,7 @@ export type BracketRaw = {
   team6: string;
   team7: string;
   team8: string;
+  paid: boolean;
 };
 
 export type Bracket = {
@@ -31,4 +33,5 @@ export type Bracket = {
   teams: string[];
   points?: number;
   teamsIn?: number;
+  paid: boolean;
 }
