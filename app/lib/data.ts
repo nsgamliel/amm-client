@@ -6,16 +6,14 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 export const getBrackets = async () => {
   try {
     const data = await sql<BracketRaw[]>`
-      SELECT brackets.bracket_id, brackets.name, users.name AS user_name, brackets.team1, brackets.team2, brackets.team3, brackets.team4, brackets.team5, brackets.team6, brackets.team7, brackets.team8, brackets.paid
-      FROM brackets
-      JOIN users ON brackets.user_id = users.user_id`;
+      SELECT *
+      FROM brackets`;
 
     // console.log(data);
 
     const brackets = data.map((bracket) => ({
       id: bracket.bracket_id,
       name: bracket.name,
-      user: bracket.user_name,
       teams: [
         bracket.team1,
         bracket.team2,

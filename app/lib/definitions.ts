@@ -14,7 +14,6 @@ export type Team = {
 export type BracketRaw = {
   bracket_id: number;
   name: string;
-  user_name: string;
   team1: string;
   team2: string;
   team3: string;
@@ -29,7 +28,6 @@ export type BracketRaw = {
 export type Bracket = {
   id: number;
   name: string;
-  user: string;
   teams: string[];
   points?: number;
   teamsIn?: number;
