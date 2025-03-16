@@ -36,7 +36,7 @@ export default function Page() {
             <p>If that sounds familiar, you're in the right place. Otherwise, don't worry about it.</p>
             <p>Be a mensch.</p>
             <Link
-              href="/dashboard/leaderboard"
+              href="/dashboard"
               className="flex items-center gap-5 self-start rounded-lg bg-red-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-500 md:text-base"
             >
               <span>View Contest</span> <ArrowRightIcon className="w-5 md:w-6" />
