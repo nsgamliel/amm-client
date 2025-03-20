@@ -55,13 +55,22 @@ export const getTeamsDict = async ():Promise<{ [char6: string]: Team }> => {
 
 export const getLeaderboard = async () => {
   let [brackets, teams]:[Bracket[], {[key: string]: Team}] = await Promise.all([getBrackets(), getTeamsDict()]);
+
+  // console.log(brackets);
+  // console.log(teams);
   
   brackets.forEach((bracket:Bracket) => {
+    console.log(bracket.name);
     bracket.points = bracket.teams
-      .map((char6:string) => teams[char6].seed * 15 + teams[char6].confirmedpts + teams[char6].inprogresspts)
+      .map((char6:string) => {
+        if (!teams[char6]) return 0;
+        return teams[char6].seed * 15 + teams[char6].confirmedpts + teams[char6].inprogresspts;
+      })
       .reduce((prev, curr) => prev + curr, 0);
     bracket.teamsIn = bracket.teams
-      .reduce((accum, curr) => teams[curr].intournament ? accum + 1 : accum, 0);
+      .reduce((accum, curr) =>
+        teams[curr] && teams[curr].intournament ? accum + 1 : accum
+      , 0);
   });
 
   return brackets;

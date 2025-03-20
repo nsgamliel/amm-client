@@ -68,6 +68,7 @@ export default function ExpandableTable({
                     </thead>
                     <tbody key={`${bracket.id}subbody`}>
                       {bracket.teams.map((team:string, idx:number) => (
+                        teams[team] ?
                         <React.Fragment key={idx}>
                           <tr key={`${idx}r`} className='hidden md:table-row'>
                             <td className='w-1/2'>{teams[team].name}</td>
@@ -82,6 +83,7 @@ export default function ExpandableTable({
                             <td className={`${teams[team].intournament ? 'text-green-500' : 'text-red-500'}`}>{teams[team].intournament ? "Active" : "Eliminated"}</td>
                           </tr>
                         </React.Fragment>
+                        : <React.Fragment key={idx}></React.Fragment>
                         
                       ))}
                     </tbody>
