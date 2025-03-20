@@ -60,7 +60,7 @@ export const getLeaderboard = async () => {
   // console.log(teams);
   
   brackets.forEach((bracket:Bracket) => {
-    console.log(bracket.name);
+    // console.log(bracket.name);
     bracket.points = bracket.teams
       .map((char6:string) => {
         if (!teams[char6]) return 0;

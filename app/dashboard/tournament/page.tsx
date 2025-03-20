@@ -27,8 +27,6 @@ export default async function Page() {
     return 0;
   });
 
-  console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',teams);
-
   return (
     <>
       <h1 className={`${lusitana.className} text-center md:text-left text-4xl mb-6`}>Tournament</h1>
