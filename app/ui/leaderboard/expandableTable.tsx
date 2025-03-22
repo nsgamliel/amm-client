@@ -67,7 +67,15 @@ export default function ExpandableTable({
                       </tr>
                     </thead>
                     <tbody key={`${bracket.id}subbody`}>
-                      {bracket.teams.map((team:string, idx:number) => (
+                      {bracket.teams.sort((a:string, b:string) => {
+                        const aT = teams[a] ? teams[a] : null;
+                        const bT = teams[b] ? teams[b] : null;
+                        if (aT && bT && aT.seed > bT.seed) return 1;
+                        if (aT && bT && aT.seed < bT.seed) return -1;
+                        if (aT && bT && aT.seed === bT.seed && aT.name > bT.name) return 1;
+                        if (aT && bT && aT.seed === bT.seed && aT.name < bT.name) return -1;
+                        return 0;
+                      }).map((team:string, idx:number) => (
                         teams[team] ?
                         <React.Fragment key={idx}>
                           <tr key={`${idx}r`} className='hidden md:table-row'>

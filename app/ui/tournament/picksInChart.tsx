@@ -22,34 +22,39 @@ export default function PicksInChart({
 }) {
 
   const labels = [
-    "03-20-2024",
-    "03-21-2024",
-    "03-22-2024",
-    "03-23-2024",
-    "03-24-2024",
-    "03-25-2024",
-    "03-26-2024",
-    "03-27-2024",
-    "03-28-2024",
-    "03-29-2024",
-    "03-30-2024",
-    "03-31-2024",
-    "04-01-2024",
-    "04-02-2024",
-    "04-03-2024",
-    "04-04-2024",
-    "04-05-2024",
-    "04-06-2024",
-    "04-07-2024",
-    "04-08-2024",
+    "03-20-2025",
+    "03-21-2025",
+    "03-22-2025",
+    "03-23-2025",
+    "03-24-2025",
+    "03-25-2025",
+    "03-26-2025",
+    "03-27-2025",
+    "03-28-2025",
+    "03-29-2025",
+    "03-30-2025",
+    "03-31-2025",
+    "04-01-2025",
+    "04-02-2025",
+    "04-03-2025",
+    "04-04-2025",
+    "04-05-2025",
+    "04-06-2025",
+    "04-07-2025",
+    "04-08-2025",
   ];
+
+  const date1 = new Date();
+  const date2 = new Date('2025-03-20');
+  const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+  const daysDiff = Math.min(Math.ceil(timeDiff / (1000 * 60 * 60 * 24)), 19);
 
   const totalPicks = teams.reduce((accum, curr) => {
     const picks = timesPicked.get(curr.char6) ? timesPicked.get(curr.char6) : 0;
     return accum + picks!;
   }, 0);
 
-  const teamsElim:number[] = labels.map((lab, idx) => {
+  const teamsElim:number[] = labels.slice(0,daysDiff).map((lab, idx) => {
     let elims = 0;
     teams.forEach((team:Team) => {
       if (team.eliminatedon === lab) {
@@ -82,7 +87,7 @@ export default function PicksInChart({
   };
 
   const chartData = {
-    labels: labels,
+    labels: labels.slice(0,daysDiff),
     datasets: [
       {
         label: 'In',
