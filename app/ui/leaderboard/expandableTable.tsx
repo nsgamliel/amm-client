@@ -48,7 +48,7 @@ export default function ExpandableTable({
                 {/* <td className='py-2'>{bracket.user}</td> */}
                 <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.points ? bracket.points : "n/a"} <span className='block md:hidden text-red-500 inline-block whitespace-nowrap'>{idx > 0 && bracket.points && leaderboard[0].points ? `(-${leaderboard[0].points - bracket.points})` : ""}</span></td>
                 <td className={`py-2 px-1 whitespace-nowrap hidden md:block ${idx > 0 ? 'text-red-500' : ''}`}>{bracket.points && leaderboard[0].points ? leaderboard[0].points - bracket.points : "n/a"}</td>
-                <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.teamsIn ? bracket.teamsIn : "n/a"}</td>
+                <td className={`py-2 px-1 whitespace-nowrap`}>{bracket.teamsIn}</td>
               </tr>
               <tr key={`${bracket.id}b`} id={`row${bracket.id}`} className={`bg-gray-100 ${
                 openRow === bracket.id ? 'table-row' : 'hidden'
